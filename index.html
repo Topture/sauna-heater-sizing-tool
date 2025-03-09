@@ -87,6 +87,19 @@
             font-size: 14px;
             color: #555;
         }
+        .backlink {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .backlink a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .backlink a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -94,7 +107,6 @@
 <div class="calculator-container">
     <h2>Sauna Heater Size Calculator</h2>
     
-    <!-- Sauna Dimensions -->
     <div class="calc-section">
         <h3>1. Enter Sauna Dimensions</h3>
         <div class="input-row">
@@ -120,7 +132,6 @@
         <p class="help-text">Enter dimensions in feet & inches, or input total volume directly.</p>
     </div>
 
-    <!-- Cold Surfaces -->
     <div class="calc-section">
         <h3>2. Cold Surface Area</h3>
         <div class="input-row full-width">
@@ -130,7 +141,6 @@
         <p class="help-text">Cold surfaces absorb heat, requiring a stronger heater. Exclude the floor.</p>
     </div>
 
-    <!-- Brand Selection -->
     <div class="calc-section">
         <h3>3. Preferred Brand</h3>
         <div class="brand-selection">
@@ -141,12 +151,15 @@
 
     <button class="topture-button" onclick="calculateHeaterSize()">Calculate</button>
 
-    <!-- Results -->
     <div id="results" class="results-section">
         <h3>Results</h3>
         <p><strong>Total Sauna Volume:</strong> <span id="result-volume"></span> cu. ft.</p>
         <p><strong>Adjusted Sauna Volume:</strong> <span id="result-adjusted"></span> cu. ft.</p>
         <p><strong>Recommended Heater Size:</strong> <span id="result-heater"></span> kW</p>
+    </div>
+
+    <div class="backlink">
+        <p>Looking for a sauna heater? <a href="https://topture.com/collections/sauna-heaters" target="_blank">Browse our collection</a></p>
     </div>
 </div>
 
@@ -160,17 +173,9 @@
         let heightIn = parseFloat(document.getElementById("height-in").value) || 0;
         let totalVolume = parseFloat(document.getElementById("total-volume").value) || null;
         let coldSurfaces = parseFloat(document.getElementById("cold-surfaces").value) || 0;
-        
-        // Convert feet and inches to total cubic feet
         let saunaVolume = totalVolume || (((depthFt + depthIn / 12) * (widthFt + widthIn / 12) * (heightFt + heightIn / 12)));
-
-        // Adjust for cold surfaces (each sq. ft adds 1.2 cu. ft)
         let adjustedVolume = saunaVolume + (coldSurfaces * 1.2);
-
-        // Calculate heater size (volume / 1.2)
         let heaterSize = (adjustedVolume / 1.2).toFixed(1);
-
-        // Display results
         document.getElementById("result-volume").textContent = saunaVolume.toFixed(1);
         document.getElementById("result-adjusted").textContent = adjustedVolume.toFixed(1);
         document.getElementById("result-heater").textContent = heaterSize;
