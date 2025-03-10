@@ -1,0 +1,20 @@
+{
+  "name": "sauna-heater-sizing-tool",
+  "version": "1.0.0",
+  "description": "Easily find the ideal sauna heater size with our Sauna Heater Size Calculator. Optimize heating based on sauna dimensions, insulation, and materials. Embed it on your website to help users choose the right heater effortlessly! 🚀.",
+  "homepage": "https://github.com/Topture/sauna-heater-sizing-tool#readme",
+  "bugs": {
+    "url": "https://github.com/Topture/sauna-heater-sizing-tool/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Topture/sauna-heater-sizing-tool.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
