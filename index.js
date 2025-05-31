@@ -175,7 +175,7 @@
         let coldSurfaces = parseFloat(document.getElementById("cold-surfaces").value) || 0;
         let saunaVolume = totalVolume || (((depthFt + depthIn / 12) * (widthFt + widthIn / 12) * (heightFt + heightIn / 12)));
         let adjustedVolume = saunaVolume + (coldSurfaces * 50);
-        let heaterSize = (adjustedVolume / 1.2).toFixed(1);
+        let heaterSize = (adjustedVolume / 50).toFixed(1);
         document.getElementById("result-volume").textContent = saunaVolume.toFixed(1);
         document.getElementById("result-adjusted").textContent = adjustedVolume.toFixed(1);
         document.getElementById("result-heater").textContent = heaterSize;
